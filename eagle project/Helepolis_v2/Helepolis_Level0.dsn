@@ -1,0 +1,462 @@
+(PCB "C:/Users/Javier/Documents/eagle/Helepolis_v2/Helepolis_Level0.brd"
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad CadSoft)
+    (host_version 'EAGLE Version 7.3.0 Copyright (c) 1988-2015 CadSoft')
+  )
+  (resolution mm 10000)
+  (unit mm)
+  (structure
+    (layer "1#Top"  (type signal))
+    (layer "16#Bottom"  (type signal))
+    (boundary 
+      (rect pcb  0.000000 0.000000 100.000000 86.000000)
+    )
+    (boundary (path signal 0 3.000000 0.000000 97.000000 0.000000))
+    (boundary (path signal 0 100.000000 3.000000 100.000000 10.000000))
+    (boundary (path signal 0 100.000000 46.000000 100.000000 83.000000))
+    (boundary (path signal 0 0.000000 83.000000 0.000000 46.000000))
+    (boundary (path signal 0 0.000000 10.000000 0.000000 3.000000))
+    (boundary (path signal 0 0.000000 3.000000 0.000000 10.000000))
+    (boundary (path signal 0 14.000000 10.000000 14.000000 19.000000))
+    (boundary (path signal 0 14.000000 19.000000 14.000000 37.000000))
+    (boundary (path signal 0 14.000000 37.000000 14.000000 46.000000))
+    (boundary (path signal 0 14.000000 46.000000 0.000000 46.000000))
+    (boundary (path signal 0 0.000000 46.000000 0.000000 83.000000))
+    (boundary (path signal 0 3.000000 86.000000 97.000000 86.000000))
+    (boundary (path signal 0 100.000000 83.000000 100.000000 46.000000))
+    (boundary (path signal 0 100.000000 46.000000 86.000000 46.000000))
+    (boundary (path signal 0 86.000000 46.000000 86.000000 37.000000))
+    (boundary (path signal 0 86.000000 37.000000 86.000000 17.000000))
+    (boundary (path signal 0 86.000000 17.000000 86.000000 10.000000))
+    (boundary (path signal 0 86.000000 10.000000 100.000000 10.000000))
+    (boundary (path signal 0 100.000000 10.000000 100.000000 3.000000))
+    (boundary (path signal 0 97.000000 0.000000 3.000000 0.000000))
+    (boundary (path signal 0 14.000000 10.000000 0.000000 10.000000))
+    (boundary (path signal 0 0.000000 3.000000 3.000000 0.000000))
+    (boundary (path signal 0 100.000000 3.000000 97.000000 0.000000))
+    (boundary (path signal 0 100.000000 83.000000 97.000000 86.000000))
+    (boundary (path signal 0 0.000000 83.000000 3.000000 86.000000))
+    (via
+       "Round1$0.609597"
+    )
+    (rule (width 0.381000)(clearance 0.304800))
+    (rule (clearance 0.203200 (type smd_pin)))
+    (rule (clearance 0.203200 (type smd_via)))
+    (rule (clearance 0.203200 (type smd_smd)))
+    (wire_keepout(rect "1#Top" 44.000000 20.000000 48.000000 40.000000))
+    (wire_keepout(rect "1#Top" 52.000000 20.000000 56.000000 40.000000))
+    (wire_keepout(rect "1#Top" 2.000000 48.000000 18.000000 52.000000))
+    (wire_keepout(rect "1#Top" 82.000000 48.000000 98.000000 52.000000))
+    (wire_keepout(rect "1#Top" 46.000000 48.000000 54.000000 52.000000))
+    (wire_keepout(rect "1#Top" 46.000000 58.000000 54.000000 62.000000))
+    (wire_keepout(rect "1#Top" 46.000000 58.000000 54.000000 62.000000))
+    (wire_keepout(rect "1#Top" 44.000000 20.000000 48.000000 40.000000))
+    (wire_keepout(rect "1#Top" 46.500000 58.000000 54.500000 62.000000))
+    (via_keepout(rect signal 26.000000 51.000000 30.000000 61.000000))
+    (via_keepout(rect signal 14.000000 19.000000 38.000000 37.000000))
+    (via_keepout(rect signal 62.000000 19.000000 86.000000 37.000000))
+    (keepout (circ signal 3.003200 27.000000 19.000000))
+    (keepout (circ signal 3.003200 27.000000 37.000000))
+    (keepout (circ signal 3.003200 73.000000 19.000000))
+    (keepout (circ signal 3.003200 73.000000 37.000000))
+    (keepout (circ signal 3.403200 4.000000 5.000000))
+    (keepout (circ signal 3.403200 12.000000 5.000000))
+    (keepout (circ signal 3.403200 96.000000 5.000000))
+    (keepout (circ signal 3.403200 88.000000 5.000000))
+    (keepout (circ signal 3.403200 5.000000 81.000000))
+    (keepout (circ signal 3.403200 95.000000 81.000000))
+    (keepout (circ signal 3.403200 4.000000 56.000000))
+    (keepout (circ signal 3.403200 96.000000 56.000000))
+    (keepout (circ signal 3.403200 16.000000 81.000000))
+    (keepout (circ signal 3.403200 84.000000 81.000000))
+    (keepout (circ signal 3.403200 30.000000 81.000000))
+    (keepout (circ signal 3.403200 70.000000 81.000000))
+    (keepout (circ signal 3.403200 18.000000 15.000000))
+    (keepout (circ signal 3.403200 18.000000 41.000000))
+    (keepout (circ signal 3.403200 82.000000 41.000000))
+    (keepout (circ signal 3.403200 82.000000 15.000000))
+    (keepout (circ signal 3.403200 20.000000 5.000000))
+    (keepout (circ signal 3.403200 80.000000 5.000000))
+    (keepout (circ signal 4.203200 9.000000 72.000000))
+    (keepout (circ signal 4.203200 40.000000 77.000000))
+    (keepout (circ signal 4.203200 50.000000 80.000000))
+    (keepout (circ signal 4.203200 60.000000 77.000000))
+    (keepout (circ signal 4.203200 91.000000 72.000000))
+    (control
+      (via_at_smd on)
+    )
+  )
+  (placement
+    (place_control (flip_style rotate_first))
+    (component "C1206$adafruit" 
+      (place "CALI_0" 70.000000 42.000000 Front 180.000000)
+    )
+    (component "C1206$adafruit" 
+      (place "CALI_1" 72.000000 44.000000 Front 0.000000)
+    )
+    (component "C1206$adafruit" 
+      (place "CL293_0" 41.000000 21.000000 Front 0.000000)
+    )
+    (component "C1206$adafruit" 
+      (place "CL293_1" 59.000000 21.000000 Front 180.000000)
+    )
+    (component "C1206$adafruit" 
+      (place "CL293_2" 59.000000 27.000000 Front 180.000000)
+    )
+    (component "C1206$adafruit" 
+      (place "CL293_3" 59.000000 24.000000 Front 180.000000)
+    )
+    (component "C1206$adafruit" 
+      (place "CMUL" 28.000000 64.000000 Front 180.000000)
+    )
+    (component "MA03-1$con-lstb" 
+      (place "CON_0" 50.000000 50.000000 Front 0.000000)
+    )
+    (component "1X06$pinhead" 
+      (place "CON_1" 10.000000 50.000000 Front 0.000000)
+    )
+    (component "1X06$pinhead" 
+      (place "CON_2" 90.000000 50.000000 Front 0.000000)
+    )
+    (component "DIL16$st-microelectronics" 
+      (place "DRIVER_MOT" 50.000000 30.000000 Front 270.000000)
+    )
+    (component "TO220H$linear" 
+      (place "IC1" 71.000000 58.000000 Front 0.000000)
+    )
+    (component "SO16$40xx" 
+      (place "IC2" 28.000000 56.000000 Front 90.000000)
+    )
+    (component "JP1$jumper" 
+      (place "MOTA" 41.000000 37.000000 Front 0.000000)
+    )
+    (component "JP1$jumper" 
+      (place "MOTB" 59.000000 37.000000 Front 180.000000)
+    )
+    (component "QRE1113-W$SparkFun-Sensors" 
+      (place "QR_0" 40.000000 77.000000 Back 0.000000)
+    )
+    (component "QRE1113-W$SparkFun-Sensors" 
+      (place "QR_1" 60.000000 77.000000 Back 0.000000)
+    )
+    (component "QRE1113-W$SparkFun-Sensors" 
+      (place "QR_2" 50.000000 80.000000 Back 0.000000)
+    )
+    (component "QRE1113-W$SparkFun-Sensors" 
+      (place "QR_3" 9.000000 72.000000 Back 0.000000)
+    )
+    (component "QRE1113-W$SparkFun-Sensors" 
+      (place "QR_4" 91.000000 72.000000 Back 0.000000)
+    )
+    (component "R1206$rcl" 
+      (place "RQR0_A" 43.500000 72.500000 Front 270.000000)
+    )
+    (component "R1206$rcl" 
+      (place "RQR0_B" 34.000000 77.000000 Front 180.000000)
+    )
+    (component "R1206$rcl" 
+      (place "RQR1_A" 66.000000 77.000000 Front 0.000000)
+    )
+    (component "R1206$rcl" 
+      (place "RQR1_B" 56.500000 72.500000 Front 270.000000)
+    )
+    (component "R1206$rcl" 
+      (place "RQR2_A" 52.000000 73.500000 Front 270.000000)
+    )
+    (component "R1206$rcl" 
+      (place "RQR2_B" 48.000000 73.500000 Front 270.000000)
+    )
+    (component "R1206$rcl" 
+      (place "RQR3_A" 15.000000 72.000000 Front 0.000000)
+    )
+    (component "R1206$rcl" 
+      (place "RQR3_B" 3.000000 72.000000 Front 180.000000)
+    )
+    (component "R1206$rcl" 
+      (place "RQR4_A" 97.000000 72.000000 Front 0.000000)
+    )
+    (component "R1206$rcl" 
+      (place "RQR4_B" 85.000000 72.000000 Front 180.000000)
+    )
+    (component "MA03-1$con-lstb" 
+      (place "SHARP_EXT_5" 30.000000 12.000000 Front 0.000000)
+    )
+    (component "MA03-1$con-lstb" 
+      (place "SHARP_EXT_6" 50.000000 12.000000 Front 0.000000)
+    )
+    (component "MA03-1$con-lstb" 
+      (place "SHARP_EXT_7" 70.000000 12.000000 Front 0.000000)
+    )
+    (component "MA03-1$con-lstb" 
+      (place "SHARP_F" 50.000000 60.000000 Front 0.000000)
+    )
+  )
+  (library
+    (image "SO16$40xx"
+      (pin "Rectangle1" "1" -4.445000 -3.073400)
+      (pin "Rectangle1" "2" -3.175000 -3.073400)
+      (pin "Rectangle1" "3" -1.905000 -3.073400)
+      (pin "Rectangle1" "4" -0.635000 -3.073400)
+      (pin "Rectangle1" "5" 0.635000 -3.073400)
+      (pin "Rectangle1" "6" 1.905000 -3.073400)
+      (pin "Rectangle1" "7" 3.175000 -3.073400)
+      (pin "Rectangle1" "8" 4.445000 -3.073400)
+      (pin "Rectangle1" "9" 4.445000 3.073400)
+      (pin "Rectangle1" "10" 3.175000 3.073400)
+      (pin "Rectangle1" "11" 1.905000 3.073400)
+      (pin "Rectangle1" "12" 0.635000 3.073400)
+      (pin "Rectangle1" "13" -0.635000 3.073400)
+      (pin "Rectangle1" "14" -1.905000 3.073400)
+      (pin "Rectangle1" "15" -3.175000 3.073400)
+      (pin "Rectangle1" "16" -4.445000 3.073400)
+    )
+    (image "QRE1113-W$SparkFun-Sensors"
+      (pin "Rectangle2" "1" -1.927000 -0.900000)
+      (pin "Rectangle2" "2" 1.927000 -0.900000)
+      (pin "Rectangle2" "3" 1.927000 0.900000)
+      (pin "Rectangle2" "4" -1.927000 0.900000)
+    )
+    (image "C1206$adafruit"
+      (place_keepout(path "1#Top" 0 2.473000 0.983000 2.473000 -0.983000 -2.473000 -0.983000 -2.473000 0.983000 ))
+      (pin "Rectangle3" "1" -1.400000 0.000000)
+      (pin "Rectangle3" "2" 1.400000 0.000000)
+    )
+    (image "MA03-1$con-lstb"
+      (pin "Oblong1" "1" -2.540000 0.000000)
+      (pin "Oblong1" "2" 0.000000 0.000000)
+      (pin "Oblong1" "3" 2.540000 0.000000)
+    )
+    (image "JP1$jumper"
+      (pin "Oblong2" "1" 0.000000 -1.270000)
+      (pin "Oblong2" "2" 0.000000 1.270000)
+    )
+    (image "TO220H$linear"
+      (outline(circ "1#Top" 3.606800 0.000000 4.826000))
+      (outline(rect "1#Top" 2.159000 -11.049000 2.921000 -10.414000))
+      (outline(rect "1#Top" -0.381000 -11.049000 0.381000 -10.414000))
+      (outline(rect "1#Top" -2.921000 -11.049000 -2.159000 -10.414000))
+      (outline(rect "1#Top" -3.175000 -10.414000 -1.905000 -7.620000))
+      (outline(rect "1#Top" -0.635000 -10.414000 0.635000 -7.620000))
+      (outline(rect "1#Top" 1.905000 -10.414000 3.175000 -7.620000))
+      (wire_keepout(circ "16#Bottom" 5.080000 0.000000 4.826000))
+      (via_keepout(circ signal 5.080000 0.000000 4.826000))
+      (keepout (circ signal 3.505200 0.000000 4.826000))
+      (pin "Oblong3" "1" -2.540000 -10.160000)
+      (pin "Oblong3" "2" 0.000000 -10.160000)
+      (pin "Oblong3" "3" 2.540000 -10.160000)
+    )
+    (image "1X06$pinhead"
+      (pin "Oblong1" "1" -6.350000 0.000000)
+      (pin "Oblong1" "2" -3.810000 0.000000)
+      (pin "Oblong1" "3" -1.270000 0.000000)
+      (pin "Oblong1" "4" 1.270000 0.000000)
+      (pin "Oblong1" "5" 3.810000 0.000000)
+      (pin "Oblong1" "6" 6.350000 0.000000)
+    )
+    (image "R1206$rcl"
+      (place_keepout(path "1#Top" 0 -2.473000 -0.983000 -2.473000 0.983000 2.473000 0.983000 2.473000 -0.983000 ))
+      (pin "Rectangle4" "1" -1.422000 0.000000)
+      (pin "Rectangle4" "2" 1.422000 0.000000)
+    )
+    (image "DIL16$st-microelectronics"
+      (pin "Oblong4" "1" -8.890000 -3.810000)
+      (pin "Oblong4" "2" -6.350000 -3.810000)
+      (pin "Oblong4" "3" -3.810000 -3.810000)
+      (pin "Oblong4" "4" -1.270000 -3.810000)
+      (pin "Oblong4" "5" 1.270000 -3.810000)
+      (pin "Oblong4" "6" 3.810000 -3.810000)
+      (pin "Oblong4" "7" 6.350000 -3.810000)
+      (pin "Oblong4" "8" 8.890000 -3.810000)
+      (pin "Oblong4" "9" 8.890000 3.810000)
+      (pin "Oblong4" "10" 6.350000 3.810000)
+      (pin "Oblong4" "11" 3.810000 3.810000)
+      (pin "Oblong4" "12" 1.270000 3.810000)
+      (pin "Oblong4" "13" -1.270000 3.810000)
+      (pin "Oblong4" "14" -3.810000 3.810000)
+      (pin "Oblong4" "15" -6.350000 3.810000)
+      (pin "Oblong4" "16" -8.890000 3.810000)
+    )
+    (padstack "ViaDefault$0.609600"
+      (shape (circle signal 1.371600 0 0))
+    )
+    (padstack "Round1$0.609597" 
+      (shape (circle "1#Top" 1.371600 0 0))
+      (shape (circle "16#Bottom" 1.371600 0 0))
+      (attach off)
+    )
+    (padstack "Rectangle1" 
+      (shape (rect "1#Top" -0.330200 -1.016000 0.330200 1.016000))
+      (attach off)
+    )
+    (padstack "Rectangle2" 
+      (shape (rect "16#Bottom" -0.889000 -0.381000 0.889000 0.381000))
+      (attach off)
+    )
+    (padstack "Rectangle3" 
+      (shape (rect "1#Top" -0.800000 -0.900000 0.800000 0.900000))
+      (attach off)
+    )
+    (padstack "Oblong1" 
+      (shape (path signal 1.778000 0.000000 -0.889000 0.000000 0.889000))
+      (attach off)
+    )
+    (padstack "Oblong2" 
+      (shape (path signal 1.676400 -0.838200 0.000000 0.838200 0.000000))
+      (attach off)
+    )
+    (padstack "Oblong3" 
+      (shape (path signal 1.879600 0.000000 -0.939800 0.000000 0.939800))
+      (attach off)
+    )
+    (padstack "Rectangle4" 
+      (shape (rect "1#Top" -0.800000 -0.901500 0.800000 0.901500))
+      (attach off)
+    )
+    (padstack "Oblong4" 
+      (shape (path signal 1.574800 0.000000 -0.787400 0.000000 0.787400))
+      (attach off)
+    )
+  )
+  (network
+    (net "5V"
+      (pins  "DRIVER_MOT"-"16" "CL293_3"-"1" "DRIVER_MOT"-"1" "CL293_2"-"1" "DRIVER_MOT"-"9" "CL293_1"-"1" "RQR0_A"-"2" "RQR0_B"-"2" "RQR1_A"-"2" "RQR1_B"-"2" "RQR2_A"-"2" "RQR2_B"-"2" "SHARP_F"-"1" "RQR3_A"-"2" "RQR3_B"-"2" "RQR4_A"-"2" "RQR4_B"-"2" "IC2"-"16" "CMUL"-"2" "CON_1"-"6" "SHARP_EXT_5"-"1" "SHARP_EXT_6"-"1" "SHARP_EXT_7"-"1")
+    )
+    (net "COD_A"
+      (pins  "IC2"-"11" "CON_1"-"4")
+    )
+    (net "COD_B"
+      (pins  "IC2"-"10" "CON_1"-"3")
+    )
+    (net "COD_C"
+      (pins  "IC2"-"9" "CON_1"-"2")
+    )
+    (net "DR_1A"
+      (pins  "DRIVER_MOT"-"2" "CON_2"-"4")
+    )
+    (net "DR_2A"
+      (pins  "DRIVER_MOT"-"7" "CON_2"-"3")
+    )
+    (net "DR_3A"
+      (pins  "DRIVER_MOT"-"10" "CON_2"-"2")
+    )
+    (net "DR_4A"
+      (pins  "DRIVER_MOT"-"15" "CON_2"-"1")
+    )
+    (net "GND"
+      (pins  "DRIVER_MOT"-"4" "DRIVER_MOT"-"5" "DRIVER_MOT"-"13" "DRIVER_MOT"-"12" "CL293_2"-"2" "CL293_3"-"2" "CL293_0"-"2" "CL293_1"-"2" "SHARP_F"-"2" "IC1"-"2" "CALI_0"-"1" "CALI_1"-"1" "IC2"-"8" "IC2"-"7" "IC2"-"6" "CMUL"-"1" "CON_1"-"5" "CON_2"-"5" "CON_0"-"1" "SHARP_EXT_5"-"2" "SHARP_EXT_6"-"2" "SHARP_EXT_7"-"2" "QR_0"-"2" "QR_1"-"2" "QR_1"-"4" "QR_2"-"2" "QR_2"-"4" "QR_3"-"2" "QR_3"-"4" "QR_4"-"2" "QR_4"-"4" "QR_0"-"4")
+    )
+    (net "MOTA_1"
+      (pins  "DRIVER_MOT"-"3" "MOTA"-"2")
+    )
+    (net "MOTA_2"
+      (pins  "DRIVER_MOT"-"6" "MOTA"-"1")
+    )
+    (net "MOTB_1"
+      (pins  "DRIVER_MOT"-"14" "MOTB"-"1")
+    )
+    (net "MOTB_2"
+      (pins  "DRIVER_MOT"-"11" "MOTB"-"2")
+    )
+    (net "N$1"
+      (pins  "RQR0_A"-"1" "QR_0"-"1")
+    )
+    (net "N$2"
+      (pins  "RQR1_A"-"1" "QR_1"-"1")
+    )
+    (net "N$3"
+      (pins )
+    )
+    (net "N$4"
+      (pins  "RQR2_A"-"1" "QR_2"-"1")
+    )
+    (net "N$5"
+      (pins  "RQR3_A"-"1" "QR_3"-"1")
+    )
+    (net "N$6"
+      (pins  "RQR4_A"-"1" "QR_4"-"1")
+    )
+    (net "N$7"
+      (pins )
+    )
+    (net "QR"
+      (pins  "IC2"-"3" "CON_1"-"1")
+    )
+    (net "QR0"
+      (pins  "IC2"-"13" "RQR0_B"-"1" "QR_0"-"3")
+    )
+    (net "QR1"
+      (pins  "IC2"-"14" "RQR1_B"-"1" "QR_1"-"3")
+    )
+    (net "QR2"
+      (pins  "IC2"-"15" "RQR2_B"-"1" "QR_2"-"3")
+    )
+    (net "QR3"
+      (pins  "IC2"-"12" "RQR3_B"-"1" "QR_3"-"3")
+    )
+    (net "QR4"
+      (pins  "IC2"-"1" "RQR4_B"-"1" "QR_4"-"3")
+    )
+    (net "SH5"
+      (pins  "IC2"-"5" "SHARP_EXT_5"-"3")
+    )
+    (net "SH6"
+      (pins  "IC2"-"2" "SHARP_EXT_6"-"3")
+    )
+    (net "SH7"
+      (pins  "IC2"-"4" "SHARP_EXT_7"-"3")
+    )
+    (net "SH_F"
+      (pins  "SHARP_F"-"3" "CON_0"-"2")
+    )
+    (net "VCC"
+      (pins  "IC1"-"1" "CALI_0"-"2" "CON_2"-"6")
+    )
+    (net "VCCMOT"
+      (pins )
+    )
+    (net "VCC_MOT"
+      (pins  "DRIVER_MOT"-"8" "CL293_0"-"1" "IC1"-"3" "CALI_1"-"2")
+    )
+    (class "GND"
+      
+      (rule
+        (width 1.016000)
+        (clearance 0.304800)
+      )
+    )
+    (class "VCC"
+       "5V" "GND" "MOTA_1" "MOTA_2" "MOTB_1" "MOTB_2" "VCC" "VCC_MOT"
+      (rule
+        (width 0.635000)
+      )
+    )
+  )
+  (wiring
+    (wire
+      (poly "1#Top"  0.406400 0.000000 10.000000 0.000000 3.000000 3.000000 0.000000 97.000000 0.000000 100.000000 3.000000 100.000000 10.000000 86.000000 10.000000 86.000000 46.000000 100.000000 46.000000 100.000000 83.000000 97.000000 86.000000 3.000000 86.000000 0.000000 83.000000 0.000000 46.000000 14.000000 46.000000 14.000000 10.000000) 
+      (net "N$3")
+    )
+    (wire
+      (poly "16#Bottom"  0.406400 0.000000 10.000000 0.000000 3.000000 3.000000 0.000000 97.000000 0.000000 100.000000 3.000000 100.000000 10.000000 86.000000 10.000000 86.000000 46.000000 100.000000 46.000000 100.000000 83.000000 97.000000 86.000000 3.000000 86.000000 0.000000 83.000000 0.000000 46.000000 14.000000 46.000000 14.000000 10.000000) 
+      (net "N$7")
+    )
+    (wire
+      (path "1#Top" 0.381000 73.540000 47.840000 73.540000 45.465000) 
+      (net "VCCMOT")
+    )
+    (wire
+      (path "1#Top" 0.381000 73.400000 44.000000 73.400000 45.395400) 
+      (net "VCCMOT")
+    )
+    (wire
+      (path "1#Top" 0.381000 73.540000 45.465000 73.469600 45.465000) 
+      (net "VCCMOT")
+    )
+    (wire
+      (path "1#Top" 0.381000 73.469600 45.465000 73.400000 45.395400) 
+      (net "VCCMOT")
+    )
+  )
+)

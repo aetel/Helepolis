@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#00A79D"
+    >
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="#00A79D"
+    >
+<TextView  
+    android:id="@+id/text"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="@string/paired_devices"
+    android:textColor="#FFFFFF"
+    android:textSize="30sp"
+    />
+<ListView 
+    android:id="@+id/pairedDevices"
+    android:layout_width="fill_parent" 
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    style="@style/ListFont"
+    />
+<Button
+    android:id="@+id/findButton"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:text="@string/find_other_devices"
+    android:layout_marginTop="20dp"
+    android:background="@drawable/button_selector"
+    android:textColor="#FFFFFF"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp"
+    />
+<TextView  
+    android:id="@+id/findText"
+    android:layout_width="fill_parent" 
+    android:layout_height="wrap_content" 
+    android:text="@string/found_devices"
+    android:textSize="30sp"
+    android:textColor="#FFFFFF"
+    android:visibility="gone"
+    />
+</LinearLayout>
+
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#00A79D"
+    >
+<ListView 
+    android:id="@+id/foundDevices"
+    android:layout_width="fill_parent" 
+    android:layout_height="fill_parent"
+    />
+</LinearLayout>
+</LinearLayout>

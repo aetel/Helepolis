@@ -1,0 +1,36 @@
+<resources>
+
+    <string name="app_name">Helepolis AETEL</string>
+	<string name="prompt">Choose one option</string>
+	<string-array name="robot_options">
+        <item>Serial killer mode</item>
+        <item>Coward mode</item>
+    </string-array>
+    <string name="tilt_instructions">\n-Click over the name of the device you want to connect\n\n-Put the device in a way that you can see the notification bar in the top part in case of mobile phones and in the bottom part in case of a Tablet\n\n-By default,the first move is always right forward\n\n-If you want a reverse move, bring the top part (mobile devices) or bottom part (tablets) (the one with the notification bar) of the device towards you until you hear the default notification sound, and do the same to do the contrary\n\n-To stop the communication with the device, put the device in a way that the screen is pointing to the sky or ceiling</string>
+	<string name="template_instructions">\n-Click over the name of the device you want to connect\n\n-Put the finger on the screen and move it, in the order you desire,on the direction you want the car to be moved\n\n-By default,the first move is always right forward\n\n-If you want a reverse move, repeat the last move on the contrary way(e.g.:if your last move was to the right, do the next one to the left)\n\n-The way between two points is equivalent to one move</string>
+	<string name="stop_signal">Stop signal</string>
+	<string name="red">Red	</string>
+	<string name="green">Green	</string>
+	<string name="blue">Blue	</string>
+	<string name="text_RGB">Select option for the RGB leds</string>
+	<string name="text_left_RGB_automatic">LEFT RGB\nAUTOMATIC MODE</string>
+	<string name="text_right_RGB_automatic">RIGHT RGB\nAUTOMATIC MODE</string>
+	<string name="text_left_RGB_manual">LEFT RGB\nMANUAL MODE</string>
+	<string name="text_right_RGB_manual">RIGHT RGB\nMANUAL MODE</string>
+	<string name="front_led_text_automatic">FRONT LED\nAUTOMATIC MODE</string>	
+	<string name="front_led_text_manual_on">FRONT LED\nON</string>
+	<string name="front_led_text_manual_off">FRONT LED\nOFF</string>
+	<string name="back_led_text_automatic">BACK LED\nAUTOMATIC MODE</string>	
+	<string name="back_led_text_manual_on">BACK LED\nON</string>
+	<string name="back_led_text_manual_off">BACK LED\nOFF</string>
+	<string name="text_off">Off</string>
+	<string name="front_led_text">Select the option for the front leds</string>
+	<string name="back_led_text">Select the option for the back leds</string>
+	<string name="paired_devices">Paired devices:</string>
+	<string name="find_other_devices">Find other devices:</string>
+	<string name="found_devices">Found devices:</string>
+	<string name="text_continue">Continue</string>
+	<string name="text_help">Help</string>
+	<string name="spinner_text">Select which mode to use:</string>
+	<string name="text_instructions_spinner">Select for which mode you want to see the instructions:</string>
+</resources>

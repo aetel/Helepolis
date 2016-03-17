@@ -1,0 +1,36 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="aetel.helepolis"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk android:minSdkVersion="15"
+        android:targetSdkVersion="15"/>
+	<uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity android:name="MainActivity"
+                  android:label="Helepolis AETEL"
+                  android:theme="@android:style/Theme.Black.NoTitleBar"
+                  android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SensorActivity"
+        android:label="Helepolis AETEL"
+		android:screenOrientation="landscape"
+        />
+        <activity android:name=".InstructionsActivity"
+        android:label="Helepolis AETEL"
+		android:screenOrientation="portrait"
+        />
+    </application>
+
+</manifest>
