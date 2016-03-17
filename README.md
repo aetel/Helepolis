@@ -1,5 +1,5 @@
 # Helepolis
-![alt text](https://github.com/aetel/helepolis/helepolisnamehelmetBK.png "Helepolis")
+![alt text](https://github.com/aetel/helepolis/blob/master/helepolisnamehelmetBK.png "Helepolis")
 
 Helepolis is an **educative** robot for those who want to have their **first contact** with robotics.
 
