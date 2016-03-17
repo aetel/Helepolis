@@ -1,9 +1,11 @@
 # Helepolis
+![alt text](https://github.com/aetel/helepolis/helepolisnamehelmetBK.png "Helepolis")
 
 Helepolis is an **educative** robot for those who want to have their **first contact** with robotics.
 
 It's based around the Arduino platform, using an Arduino Nano as its brain.
 It can be programmed to complete numerous tasks such as line following and sumo fighting.
+
 ---
 ### The machine includes:
 * An Arduino Nano with ATMega 328p
@@ -16,6 +18,7 @@ It can be programmed to complete numerous tasks such as line following and sumo 
 * I2C or SPI Expansion Module Port (intended use is for an ADXL345 3-axis accelerometer)
 * Buzzer
 * A few switches for general use
+
 ---
 ### In this repository you will find:
 * EagleCAD project
