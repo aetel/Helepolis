@@ -1,4 +1,3 @@
-# Helepolis
 ![alt text](https://github.com/aetel/helepolis/blob/master/helepolisnamehelmetBK.png "Helepolis")
 
 Helepolis is an **educative** robot for those who want to have their **first contact** with robotics.
@@ -22,15 +21,16 @@ It can be programmed to complete numerous tasks such as line following and sumo 
 ---
 ### In this repository you will find:
 * EagleCAD project
-... Includes the schematic and the PCB files
+..* Includes the schematic and the PCB files
 * TestCode
-... A program to check all the sensors and actuators are working fine
+..* A program to check all the sensors and actuators are working fine
 * ExampleCode
-... Line follower and sumo bot example program
+..* Line follower and sumo bot example program
 * Assembly manuals
-... Guided assembly manuals in English and Spanish
+..* Guided assembly manuals in English and Spanish
 * BoM
-... Bill of Materials used for the robot
+..* Bill of Materials used for the robot
+
 ---
 Helepolis and its surrounding materials are published under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
