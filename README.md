@@ -33,6 +33,8 @@ It can be programmed to complete numerous tasks such as line following and sumo 
 
 
 ---
+[![CC0](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/)
+
 Helepolis and its surrounding materials are published under [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/)
 
 Helepolis was designed by [Pablo dMM](https://github.com/PabloDMM "Pablo dMM") for Telecom Electronics Association [AETEL](http://aetel.io), based at the Campus Sur of [Universidad Politécnica de Madrid](http://upm.es).
