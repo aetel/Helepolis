@@ -31,6 +31,9 @@ It can be programmed to complete numerous tasks such as line following and sumo 
 * BoM
 <br>&nbsp;&nbsp;Bill of Materials used for the robot
 
+---
+### Android app:
+You can download the app to control the robot at [Google Play](https://play.google.com/store/apps/details?id=aetel.helepolis), though you may be interested in building or modifying the code available in this repository.
 
 ---
 [![CC0](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](https://creativecommons.org/licenses/by-sa/4.0/)
