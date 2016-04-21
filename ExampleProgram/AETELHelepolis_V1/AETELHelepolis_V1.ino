@@ -7,7 +7,7 @@ Description: Software for the AETEL Helepolis. It covers 4 modes
   Bluetooth Mode: The Bluetooth Mode programs the AETEL Helepolis to act as a Bluetooth remote controlled device.
        
 Authors: Pablo de Miguel Morales (Pablodmm.isp@gmail.com)
-         Javier Martinez Arrieta
+         Javier Martinez Arrieta (martinezarrietajavier@gmail.com)
          
 Release: 18.11.2015
 */
@@ -17,14 +17,26 @@ Release: 18.11.2015
 #include <Adafruit_Sensor.h>
 #include <Adafruit_ADXL345_U.h>
 
+// Mode definitions
+#define LED_MANUAL_OFF 0
+#define LED_MANUAL_ON 1
+#define LED_AUTOMATIC 2
+#define FORWARD 1
+#define BACKWARDS 0
+#define STOP 2
+#define THRESHOLD_DISTANCE 400
+#define COWARD_MODE 0
+#define SERIAL_KILLER_MODE 1
+#define MAX_TIME 3000
+
 // Pin Definitions
 #define MUL_A 19
 #define MUL_B 18
 #define MUL_C 17
 #define MOT_A_1 3
 #define MOT_A_2 7
-#define MOT_B_1 5
-#define MOT_B_2 4
+#define MOT_B_1 4
+#define MOT_B_2 5
 #define QRIR 7
 #define SHARP 6
 #define SW 16
@@ -38,6 +50,7 @@ Release: 18.11.2015
 #define AX_SDA 11
 #define AX_SDO 12
 #define AX_SCL 13
+
 
 const int borderThr = 900;
 const int distanceThr = 300;
@@ -60,7 +73,25 @@ boolean lastDir = 0; // LF Last Direction Flag
 int stateSumo=0; // Sumobot Mode State
 int stateLineFollower=0; // LineFollower Mode State
 int Mode=0; // General Working Mode
+int bluetooth_robot_mode;
+int dir=STOP;
+int leftSpeed=255;
+int rightSpeed=255;
+int frontLedsMode=0;
+int backLedsMode=0;
+int leftRGBMode=LED_MANUAL_ON;
+int leftRed=255;
+int leftGreen=255;
+int leftBlue=255;
+int rightRGBMode=LED_MANUAL_ON;
+int rightRed=255;
+int rightGreen=255;
+int rightBlue=255;
+
+
 Adafruit_NeoPixel strip = Adafruit_NeoPixel(2, LED_RGB, NEO_GRB + NEO_KHZ800);
+
+
 //Adafruit_ADXL345_Unified ADX = Adafruit_ADXL345_Unified(12345);
 
 void setup(){
@@ -94,6 +125,16 @@ void setup(){
       Mode = 2; // Line Follower Mode
     }else{
       Mode = 3; // Bluetooth Controlled Mode
+      //Starts RGB leds control
+      strip.begin();
+  
+      //Red color for both RGB leds
+      LedRGBControl(LED_MANUAL_ON,LED_MANUAL_ON,255,0,0,255,0,0,0,0);
+      
+      //Wait until it receives which mode is going to be used
+      while(Serial.available()==0);
+      bluetooth_robot_mode=Serial.read();
+      Serial.write(1010);
     }
   }
 }
@@ -125,21 +166,37 @@ void loop(){
    This Function controls the motors through 2 directions and 2 speeds [0:255]
 */
 void motorControl(int motADir, int motASpeed, int motBDir, int motBSpeed){
-  if(motADir==1)
+  if(motADir==FORWARD)
   { 
-    digitalWrite(MOT_A_1, HIGH);
-    analogWrite(MOT_A_2, (255 - motASpeed));
-  }else{
     digitalWrite(MOT_A_1, LOW);
     analogWrite(MOT_A_2, motASpeed);
-  } 
-  if(motBDir==1)
-  { 
-    digitalWrite(MOT_B_1, HIGH);
-    analogWrite(MOT_B_2, (255 - motBSpeed));
   }else{
+    if(motADir==BACKWARDS)
+    { 
+      digitalWrite(MOT_A_1,HIGH);
+      analogWrite(MOT_A_2,255-motASpeed);
+    }
+    else
+    {
+      digitalWrite(MOT_A_1, LOW);
+      analogWrite(MOT_A_2, LOW);
+    }
+  } 
+  if(motBDir==FORWARD)
+  { 
     digitalWrite(MOT_B_1, LOW);
-    analogWrite(MOT_B_2, motASpeed);
+    analogWrite(MOT_B_2, motBSpeed);
+  }else{
+    if(motBDir==BACKWARDS)
+    {
+      digitalWrite(MOT_B_1, HIGH);
+      analogWrite(MOT_B_2, 255-motBSpeed);
+    }
+    else
+    {
+      digitalWrite(MOT_B_1, LOW);
+      analogWrite(MOT_B_2, LOW);
+    }
   }
 }
 
@@ -376,26 +433,159 @@ void LineFollowerMode(){ // Line Follower Behaviour Mode
 */
 void BluetoothMode()
 {
-  //UART sends and receives byte by byte, so when calling Serial.read() 1 byte is read.
-//As UART is asynchronous, timer cannot be used to know when all data is received, but it would be useful to know about connection loss.
-//Wait until all necessary data is available to avoid problems such as reading wrong values (e.g.assining frontLedsMode value to backLedsMode value)
-/*    while(Serial.available()!=13);
-    dir=Serial.read();
-    veloIzq=Serial.read();
-    veloDer=Serial.read();
-    frontLedsMode=Serial.read();
-    backLedsMode=Serial.read();
-    leftRGBMode=Serial.read();
-    valueRed1=Serial.read();
-    valueGreen1=Serial.read();
-    valueBlue1=Serial.read();
-    rightRGBMode=Serial.read();
-    valueRed2=Serial.read();
-    valueGreen2=Serial.read();
-    valueBlue2=Serial.read();
-    Serial.write(1010);*///Could be anything, it is to assure that no new data will be sent from Android app
-    //functions
+
+      //UART sends and receives byte by byte, so when calling Serial.read() 1 byte is read.
+      //As UART is asynchronous, timer cannot be used to know when all data is received, but it would be useful to know about connection loss.
+      //Wait until all necessary data is available to avoid problems such as reading wrong values (e.g.assining frontLedsMode value to backLedsMode value)     
+      while(Serial.available()!=13);
+      dir=Serial.read();
+      leftSpeed=Serial.read();
+      rightSpeed=Serial.read();
+      frontLedsMode=Serial.read();
+      backLedsMode=Serial.read();
+      leftRGBMode=Serial.read();
+      leftRed=Serial.read();
+      leftGreen=Serial.read();
+      leftBlue=Serial.read();
+      rightRGBMode=Serial.read();
+      rightRed=Serial.read();
+      rightGreen=Serial.read();
+      rightBlue=Serial.read();
+      //If coward mode is selected and an obstacle is detected, forward movements are not allowed, so dir is changed to STOP
+      if(bluetooth_robot_mode==COWARD_MODE)
+      {
+        if(analogRead(SHARP)>=THRESHOLD_DISTANCE&&dir==FORWARD)
+        {
+          dir=STOP;
+        }
+      }
+      
+      //functions
+      //Sends direction and speed of each wheel
+      motorControl(dir,leftSpeed,dir,rightSpeed);
+      
+      //Sends direction and front and back leds mode
+      front_back_led(dir,frontLedsMode,backLedsMode);
+ 
+      //Sends each RGB mode and values for each color level. If selected mode is automatic, values will not be used.
+      LedRGBControl(leftRGBMode,rightRGBMode,leftRed,leftGreen,leftBlue,rightRed,rightGreen,rightBlue,leftSpeed,rightSpeed); 
+      Serial.write(1010);//Could be anything, it is to assure that no new data will be sent from Android app
+    
     //No delay is required since it is done in the Android application
 }
+
+ //Method to control both front and back leds. Dir variable will be used only in case automatic mode is selected
+void front_back_led(int dir,int frontLedsMode,int backLedsMode)
+{
+  switch(frontLedsMode)
+  {
+    case LED_AUTOMATIC:
+    {
+      switch(dir)
+      {
+        case FORWARD:
+        {
+          digitalWrite(LED_FORW,HIGH);
+          break;
+        }
+        case BACKWARDS:
+        {
+          digitalWrite(LED_FORW,LOW);
+          break;
+        }
+      };
+      break;
+    }
+    case LED_MANUAL_ON:
+    {
+      digitalWrite(LED_FORW,HIGH);
+      break;
+    }
+    case LED_MANUAL_OFF:
+    {
+      digitalWrite(LED_FORW,LOW);
+      break;
+    }
+  };
+
+  switch(backLedsMode)
+  {
+    case LED_AUTOMATIC:
+    {
+      switch(dir)
+      {
+        case FORWARD:
+        {
+          digitalWrite(LED_BACK,LOW);
+          break;
+        }
+        case BACKWARDS:
+        {
+          digitalWrite(LED_BACK,HIGH);
+          break;
+        }
+      };
+      break;
+    }
+    case LED_MANUAL_ON:
+    {
+      digitalWrite(LED_BACK,HIGH);
+      break;
+    }
+    case LED_MANUAL_OFF:
+    {
+      digitalWrite(LED_BACK,LOW);
+      break;
+    }
+  };
+}
+
+//Method to control both RGB leds. If automatic mode is selected, color level values will be ignored
+// strip.setPixelColor sets RGB the values
+// strip.show sends the updated pixel color to the hardware.
+void LedRGBControl(int leftRGBMode,int rightRGBMode,int valLeftR, int valLeftG, int valLeftB,int valRightR, int valRightG, int valRightB,int leftSpeed,int rightSpeed)
+{
+  if(leftRGBMode==LED_MANUAL_ON)
+  {
+    strip.setPixelColor(0, strip.Color(valLeftR,valLeftG,valLeftB));
+    strip.show(); 
+  }
+  else
+  {
+    if(leftRGBMode==LED_AUTOMATIC)
+    {
+      if(leftSpeed>rightSpeed)
+      {
+        strip.setPixelColor(0, strip.Color(0,255,0)); //Green color
+        strip.show();
+      }
+      else
+      {
+        strip.setPixelColor(0, strip.Color(0,0,255)); // Blue color
+        strip.show(); 
+      }
+    }
+  }
+  if(rightRGBMode==LED_MANUAL_ON)
+  {
+    strip.setPixelColor(1, strip.Color(valRightR,valRightG,valRightB));
+    strip.show();
+  }
+  else
+  {
+    if(rightRGBMode==LED_AUTOMATIC)
+    {
+      if(leftSpeed>rightSpeed)
+      {
+        strip.setPixelColor(1, strip.Color(0,0,255));//Blue color
+        strip.show();
+      }
+      else
+      {
+        strip.setPixelColor(1, strip.Color(0,255,0)); // Green color.
+        strip.show();
+      }
+    }    
+  }
   
-             
+}
