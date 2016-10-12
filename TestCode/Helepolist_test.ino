@@ -4,9 +4,11 @@ The AETEL Helepolis is released under an Attributtion-ShareAlike 4.0 Internation
 •  Adapt – Remix, transform, and build upon the material for any purpose, even commercially.
 */
 //Code written by Javier Martínez Arrieta to check that all parts of Helepolis work
+//Use assembled  Helepolis connected by USB. 
+//Check instructions by Serial Monitor at 9600 bauds and if it is correct press main button
+//Important: Disconnect bluetooth module or it doesn´t work
 
 #include <Adafruit_NeoPixel.h> 
-#include <ctype.h>
 
 #define LED_AUTOMATIC 2
 #define LED_MANUAL_OFF 0
@@ -33,38 +35,28 @@ The AETEL Helepolis is released under an Attributtion-ShareAlike 4.0 Internation
 #define LED_BACK 9
 #define NUMPIXELS 2
 
-#define THRESHOLD_DISTANCE 400
-#define COWARD_MODE 0
-#define SERIAL_KILLER_MODE 1
-#define MAX_TIME 3000
-
-int robot_mode;
-int dir=STOP,leftSpeed=255,rightSpeed=255,frontLedsMode=0,backLedsMode=0,leftRGBMode=1,leftRed=255,leftGreen=255,leftBlue=255,rightRGBMode=1,righttRed=255,rightGreen=255,rightBlue=255;
-
 //Creates an object to control RGB leds
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, QR_INT, NEO_GRB + NEO_KHZ800);
 
 //Method called when Arduino is switched on
 void setup()
 {
-  //Starts serial to allow Bluetooth communication
+  //Starts serial 
   Serial.begin(9600); 
   //Starts RGB leds control
   pixels.begin();
 }
 
-int count=0;
-
 //Method called after setup is done. This is equivalent to while(true) or while(1)
 void loop()
 { 
-    Serial.println("Helepolis test, which will check if the different parts work correctly\nPress the switch to start");
+    Serial.println("AETEL HELEPOLIS TEST\nCheck if the different parts work correctly\nPress the switch to start");
    //Check if switch is pressed. You will not be able to continue if it is not pressed
    while(digitalRead(SW)!=1);
 
-   delay(100);
-   Serial.println("Checking sharp distance sensor. Move your hand or an object to check if value changes. When checked, press the switch");
+   Serial.println("\nChecking sharp distance sensor. Move your hand or an object to check if value changes. When checked, press the switch");
    //Check that distance is read correctly. Open Serial Monitor and check that values changes when for example you put your hand at different distances
+   delay(1000);//Delay for debouncing buttons
    int count=0;
    while(digitalRead(SW)!=1)
    {
@@ -74,8 +66,8 @@ void loop()
 
    Serial.println("\nCheking microswitch. Put on or off to check that value changes (on->1, off->0). When checked, press the switch");
    //Check microswitch values. Make changes for a few seconds to check that all possible values are correctly read
+   delay(1000);//Delay for debouncing buttons
    int sw0,sw1;
-   delay(100);
    while(digitalRead(SW)!=1)
    {
       sw0=digitalRead(SW_0);
@@ -96,7 +88,6 @@ void loop()
       digitalWrite(LED_FORW,HIGH);
       digitalWrite(LED_BACK,HIGH);
    }
-
     Serial.println("Switching off leds...");
    //Turn leds off
    digitalWrite(LED_FORW,LOW);
@@ -106,7 +97,6 @@ void loop()
    //Check buzzer. Make it sound for 2 seconds
    analogWrite(BUZZ,255);
    delay(2000);
-
    //Silence again
    analogWrite(BUZZ,0);
 
@@ -137,8 +127,7 @@ void loop()
     pixels.show(); 
 
     Serial.println("\nCheck motors. They should move in both directions, stopping in about 10 seconds. To start checking, press the switch");
-    while(digitalRead(SW)!=1)
-
+    while(digitalRead(SW)!=1);
     //Check motors
     motorControl(FORWARD,255,FORWARD,255);
     delay(5000);
@@ -291,8 +280,7 @@ void LedRGBControl(int leftRGBMode,int rightRGBMode,int valLeftR, int valLeftG, 
         pixels.show();
       }
     }    
-  }
-  
+  }  
 }
 
 //Uses multiplexer to read from black/white sensors. COD_C is MSB and COD_A is LSB
@@ -338,4 +326,3 @@ void read_black_white(int sensor)
   }
   Serial.println(analogRead(QRE));
 }
-
